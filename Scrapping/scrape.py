@@ -1,10 +1,11 @@
 import time as t
 import requests
 import json
+import subprocess
 from bs4 import BeautifulSoup
 
 # initialize the post_id variable
-post_id = 97079
+post_id = 97080
 
 while True:
     url = f"https://www.helakuru.lk/esana/news/{post_id}"
@@ -46,6 +47,9 @@ while True:
             json.dump(data, f)
             
         print("Data written to data.json")
+        
+        # call the posting.py script to post the reply
+        subprocess.run(["python", "posting.py"])
         
         # increment the post_id for the next iteration
         post_id += 1
