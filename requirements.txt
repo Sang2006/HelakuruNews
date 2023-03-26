@@ -1,2 +1,3 @@
 webdriver-manager
 selenium
+BeautifulSoup4
