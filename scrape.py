@@ -5,7 +5,7 @@ import subprocess
 from bs4 import BeautifulSoup
 
 # initialize the post_id variable
-post_id = 97080
+post_id = 97079
 
 while True:
     url = f"https://www.helakuru.lk/esana/news/{post_id}"
