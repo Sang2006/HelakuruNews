@@ -22,7 +22,7 @@ time.sleep(5)
 username = driver.find_element(By.NAME, "login")
 password = driver.find_element(By.NAME, "password")
 username.send_keys("Bruh656")
-password.send_keys("Sanguda123")
+password.send_keys("NOT_GIVING_YOU_MY_PASSWORD")
 
 # Submit the form by hitting enter
 password.send_keys(Keys.RETURN)
