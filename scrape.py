@@ -25,7 +25,7 @@ while True:
     elif response.status_code == 200:
         print("New post available!")
         
-
+        # gets all the needed things from the post
         soup = BeautifulSoup(response.content, "html.parser")
         image_url = soup.find("meta", property="og:image")["content"]
         title = soup.find("meta", property="og:title")["content"]
