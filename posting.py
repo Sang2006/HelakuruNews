@@ -6,8 +6,13 @@ from selenium.webdriver.support import expected_conditions as EC
 import time
 import json
 
+# Enable headless mode
+chrome_options = webdriver.ChromeOptions()
+chrome_options.add_argument('--headless')
+chrome_options.add_argument('--disable-gpu')
+
 # Replace with the path to your webdriver
-driver = webdriver.Chrome()
+driver = webdriver.Chrome(options=chrome_options)
 
 # Navigate to the login page
 driver.get("https://elakiri.com/login/")
@@ -24,7 +29,7 @@ password.send_keys(Keys.RETURN)
 
 # Wait for the login process to complete and verify if login is successful
 wait = WebDriverWait(driver, 10)
-username_element = wait.until(EC.presence_of_element_located((By.XPATH, "//span[contains(@class, 'p-navgroup-linkText') and text()='Bruh656']")))
+username_element = wait.until(EC.presence_of_element_located((By.XPATH, "//span[contains(@class, 'p-navgroup-linkText') and text()='Bruh656']"))) #sometimes it says login failed even after the program successfully logged into the account. idk how to fix that if you know please do :)
 if "Bruh656" in username_element.text:
     print("Login successful")
 else:
